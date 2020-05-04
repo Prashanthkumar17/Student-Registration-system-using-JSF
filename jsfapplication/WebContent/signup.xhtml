@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/basictemplate.xhtml">
+    <ui:define name="content">
+        <h:form>
+                <br/><br/>
+                First name: <h:inputText  value="#{signup.firstname}"/>
+                <br/><br/>
+                last name: <h:inputText  value="#{signup.lastname}"/>
+                <br/><br/>
+                Email id: <h:inputText  value="#{signup.email}"/>
+                 <br/><br/>
+                age: <h:inputText  value="#{signup.age}"/>
+                <br/><br/>
+                Password:<h:inputSecret value="#{signup.password}"/>
+                <br/><br/>
+          
+                Country:
+                <h:selectOneMenu value="#{signup.country}">
+                    <f:selectItems value="#{signup.countryOptions}" />
+                </h:selectOneMenu>
+                <br/><br/>
+               <h:commandButton value="submit" action="signup_response"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
